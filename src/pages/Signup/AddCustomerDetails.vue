@@ -1,57 +1,49 @@
 <template>
-  <AuthLayout>
-    <template v-slot:dark-gradient>
-      <form action="#" class="signup-form">
-        <h1 class="primary-heading">Create new account</h1>
+  <div>
+    <form action="#" class="signup-form">
+      <h1 class="primary-heading">Create new account</h1>
 
-        <BaseInput
-          class="auth-input-container"
-          inputClass="auth-input"
-          label="Email Address"
-        />
-        <BaseInput
-          class="auth-input-container"
-          inputClass="auth-input"
-          label="Password"
-        />
-        <BaseInput
-          class="auth-input-container"
-          inputClass="auth-input"
-          label="Create username"
-        />
-        <BaseInput
-          class="auth-input-container"
-          inputClass="auth-input"
-          label="Enter your phone number"
-        />
+      <BaseInput
+        class="auth-input-container"
+        inputClass="auth-input"
+        label="Email Address"
+      />
+      <BaseInput
+        class="auth-input-container"
+        inputClass="auth-input"
+        label="Password"
+      />
+      <BaseInput
+        class="auth-input-container"
+        inputClass="auth-input"
+        label="Create username"
+      />
+      <BaseInput
+        class="auth-input-container"
+        inputClass="auth-input"
+        label="Enter your phone number"
+      />
 
-        <p class="referral-code-text">Got referral code?</p>
+      <p class="referral-code-text">Got referral code?</p>
 
-        <BaseButton buttonText="Sign Up" class="auth-btn" />
+      <BaseButton buttonText="Sign Up" class="auth-btn" />
 
-        <p class="sign-in-action">
-          Have an account?<span class="sign-in-action--bold"
-            >Sign in to explore</span
-          >
-        </p>
-        <div class="bottom-text">
-          <span class="need-help">Need help?</span>
-          <span class="privacy grey-text">Privacy</span>
-          <span class="grey-text">Terms & Policy</span>
-        </div>
-      </form>
-    </template>
-  </AuthLayout>
+      <p class="sign-in-action">
+        Have an account?<span class="sign-in-action--bold"
+          >Sign in to explore</span
+        >
+      </p>
+      <div class="bottom-text">
+        <span class="need-help">Need help?</span>
+        <span class="privacy grey-text">Privacy</span>
+        <span class="grey-text">Terms & Policy</span>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
-import AuthLayout from "@/layouts/auth";
-
-export default {
-  components: {
-    AuthLayout
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -66,6 +58,7 @@ export default {
 
 .primary-heading {
   margin-bottom: 5.5rem;
+  font-size: 2.5rem;
 }
 
 .auth-input-container {

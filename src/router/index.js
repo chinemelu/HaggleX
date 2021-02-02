@@ -8,9 +8,7 @@ const routes = [
     path: "/",
     name: "sign-up",
     component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../pages/Signup/AddCustomerDetails.vue"
-      )
+      import(/* webpackChunkName: "about" */ "../pages/Signup/index.vue")
   }
 ];
 
