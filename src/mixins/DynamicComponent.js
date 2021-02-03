@@ -1,6 +1,14 @@
 const DynamicComponent = {
-  mounted() {
-    console.log("hello from mixin!");
+  mounted() {},
+  data() {
+    return {
+      activeComponentIndex: 0
+    };
+  },
+  methods: {
+    moveToNextComponent() {
+      this.activeComponentIndex += 1;
+    }
   }
 };
 

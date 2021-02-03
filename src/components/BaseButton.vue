@@ -1,5 +1,7 @@
 <template>
-  <button class="primary-button">{{ buttonText }}</button>
+  <button @click="handleButtonClick" class="primary-button">
+    {{ buttonText }}
+  </button>
 </template>
 
 <script>
@@ -7,9 +9,14 @@ export default {
   props: {
     buttonText: {
       type: String,
-      default: ''
-    },
+      default: ""
+    }
   },
+  methods: {
+    handleButtonClick() {
+      this.$emit("button-clicked");
+    }
+  }
 };
 </script>
 

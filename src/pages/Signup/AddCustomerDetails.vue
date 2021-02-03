@@ -26,7 +26,11 @@
 
       <p class="referral-code-text">Got referral code?</p>
 
-      <BaseButton buttonText="Sign Up" class="auth-btn" />
+      <BaseButton
+        @button-clicked="handleAddCustomerDetailsButtonClick"
+        buttonText="Sign Up"
+        class="auth-btn"
+      />
 
       <p class="sign-in-action">
         Have an account?<span class="sign-in-action--bold"
@@ -43,30 +47,36 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    handleAddCustomerDetailsButtonClick() {
+      this.$emit("customer-details-button-clicked");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .signup-form {
   background-color: #ffffff;
-  margin: 8.4rem auto 9.2rem auto;
-  padding: 8.1rem 7.5rem;
+  margin: 10% auto 3% auto;
+  padding: 6% 10%;
   max-width: 80%;
   border-radius: 1.1rem;
   height: 80%;
 }
 
 .primary-heading {
-  margin-bottom: 5.5rem;
+  margin-bottom: 2.5rem;
   font-size: 2.5rem;
 }
 
 .auth-input-container {
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .referral-code-text {
-  margin: 5.8rem 0 3.8rem 0;
+  margin: 1.8rem 0 1.8rem 0;
   color: #2e1963;
   font-size: 1.4rem;
   cursor: pointer;

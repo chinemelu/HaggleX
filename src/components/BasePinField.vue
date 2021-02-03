@@ -35,13 +35,13 @@ export default {
 
 <style lang="scss" scoped>
 .vap-pin-input {
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 80%;
+  height: 6rem;
   border: none;
   background-color: #e5e5e5;
   border-radius: 6px;
   opacity: 0.4;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #000;
   text-align: center;
 }

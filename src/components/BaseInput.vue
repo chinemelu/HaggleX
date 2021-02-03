@@ -43,11 +43,15 @@ export default {
   border-bottom: 1px solid black;
   width: 100%;
   padding-bottom: 1.1rem;
+  &:focus {
+    outline: 0;
+    border-bottom: 1px solid blue;
+  }
 }
 
 .auth-label {
   position: absolute;
   font-size: 14px;
-  top: -.5rem;
+  top: -0.5rem;
 }
 </style>

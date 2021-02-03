@@ -49,10 +49,10 @@ export default {};
 
 <style lang="scss" scoped>
 .verify-account-page {
-  margin: 17.5rem auto 17.5rem auto;
+  margin: 8.5rem auto 5rem auto;
   background-color: #fff;
   max-width: 80%;
-  padding: 9rem 8.2rem;
+  padding: 4.5rem 4rem;
   text-align: center;
   border-radius: 1.1rem;
 }
@@ -68,8 +68,11 @@ export default {};
 
 .vap-pin-input-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 3.7rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  & > * {
+    flex-basis: 15%;
+  }
 }
 
 .code-expiry-text {
@@ -78,7 +81,7 @@ export default {};
 }
 
 .resend-code {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #000;
 }
 </style>
