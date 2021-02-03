@@ -55,6 +55,8 @@ export default {};
   padding: 4.5rem 4rem;
   text-align: center;
   border-radius: 1.1rem;
+  position: relative;
+  z-index: 2;
 }
 .primary-heading {
   font-size: 25px;

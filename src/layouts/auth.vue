@@ -1,12 +1,12 @@
 <template>
   <div class="auth-layout">
     <div class="light-gradient">
-      <transition name="fade" mode="out-in" appear>
-        <Carousel :imageArray="imageArray" />
-      </transition>
+      <Carousel :imageArray="imageArray" />
     </div>
     <div class="dark-gradient">
+      <div class="light-box-top"></div>
       <slot name="dark-gradient"></slot>
+      <div class="light-box-bottom"></div>
     </div>
   </div>
 </template>
@@ -60,18 +60,30 @@ export default {
 .dark-gradient {
   flex: 1;
   background-color: #2e1963;
+  position: relative;
 }
 
-.fade-enter {
-  opacity: 0;
+.light-box-top {
+  width: 10rem;
+  height: 10rem;
+  background: #b395ff;
+  border-radius: 1.9rem;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 0;
+  left: 5%;
+  top: 4%;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-in;
-}
-
-.fade-leave-to {
-  opacity: 0;
+.light-box-bottom {
+  width: 20rem;
+  height: 20rem;
+  background: #b395ff;
+  border-radius: 1.9rem;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 0;
+  right: 5%;
+  bottom: 18%;
 }
 </style>

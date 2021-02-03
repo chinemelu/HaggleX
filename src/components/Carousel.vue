@@ -2,6 +2,7 @@
   <div class="carousel">
     <figure class="carousel-image-container">
       <img :src="activeImage.src" alt="carousel image" class="carousel-image" />
+
       <h1 class="carousel-primary-text">{{ activeImage.primaryText }}</h1>
       <figcaption class="carousel-secondary-text">
         {{ activeImage.secondaryText }}
@@ -23,7 +24,7 @@
         :key="index"
       ></div>
 
-      <svg class="chevron-right" @click="handleNextImageClick">
+      <svg class="chevron-right" @click="handleNextImageClick(true)">
         <use xlink:href="@/assets/sprite.svg#icon-chevron-thin-right"></use>
       </svg>
     </nav>
@@ -34,10 +35,16 @@
 export default {
   data() {
     return {
-      previouslyActiveCarouselImageIndex: 0,
+      timer: 0,
       activeCarouselImageIndex: 0,
       lowestPossibleImageArrayIndex: 0
     };
+  },
+  created() {
+    this.timer = setInterval(() => this.handleNextImageClick(), 3000);
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
   },
   computed: {
     maximumImageArrayIndex() {
@@ -52,7 +59,7 @@ export default {
   },
   methods: {
     handlePreviousImageClick() {
-      this.previouslyActiveCarouselImageIndex = this.activeCarouselImageIndex;
+      clearInterval(this.timer); // if there is an interval, override it
       if (
         this.activeCarouselImageIndex === this.lowestPossibleImageArrayIndex
       ) {
@@ -61,8 +68,10 @@ export default {
         this.activeCarouselImageIndex--;
       }
     },
-    handleNextImageClick() {
-      this.previouslyActiveCarouselImageIndex = this.activeCarouselImageIndex;
+    handleNextImageClick(userClickedOnNavigation) {
+      if (userClickedOnNavigation) {
+        clearInterval(this.timer); // if user clicks on the navigation, override the interval
+      }
       if (this.activeCarouselImageIndex === this.maximumImageArrayIndex) {
         this.activeCarouselImageIndex = 0;
       } else {
@@ -84,13 +93,9 @@ export default {
   text-align: center;
   color: #fff;
 }
-.carousel-image-container {
-  position: relative;
-}
 .carousel-image {
-  width: 100%;
-  height: 40rem;
-  margin: 10% 0 3% 0;
+  height: 40vh;
+  margin: 7% 0 3% 0;
 }
 .carousel-primary-text {
   font-size: 2.5rem;

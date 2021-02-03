@@ -64,6 +64,8 @@ export default {
   max-width: 80%;
   border-radius: 1.1rem;
   height: 80%;
+  position: relative;
+  z-index: 2;
 }
 
 .primary-heading {
