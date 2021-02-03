@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="signup-index">
     <AuthLayout>
       <template v-slot:dark-gradient>
         <transition name="fade" mode="out-in" appear>
@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.signup-index {
+  overflow: hidden;
+}
 .fade-enter {
   opacity: 0;
 }
